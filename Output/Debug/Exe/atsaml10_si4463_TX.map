@@ -1196,6 +1196,8 @@ Discarded input sections
                 0x0000000000000000       0x54 Output/atsaml10_si4463_TX Debug/Obj/si4463.o
  .text.SI4463_getRSSI
                 0x0000000000000000       0x3c Output/atsaml10_si4463_TX Debug/Obj/si4463.o
+ .text.SI4463_Change_State
+                0x0000000000000000       0x2c Output/atsaml10_si4463_TX Debug/Obj/si4463.o
  .debug_macro   0x0000000000000000      0xab4 Output/atsaml10_si4463_TX Debug/Obj/si4463.o
  .debug_macro   0x0000000000000000      0x1a3 Output/atsaml10_si4463_TX Debug/Obj/si4463.o
  .debug_macro   0x0000000000000000       0x5c Output/atsaml10_si4463_TX Debug/Obj/si4463.o
@@ -1269,7 +1271,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x78 Output/atsaml10_si4463_TX Debug/Obj/si4463.o
  .debug_macro   0x0000000000000000       0x28 Output/atsaml10_si4463_TX Debug/Obj/si4463.o
  .debug_macro   0x0000000000000000       0x40 Output/atsaml10_si4463_TX Debug/Obj/si4463.o
- .debug_macro   0x0000000000000000       0xdb Output/atsaml10_si4463_TX Debug/Obj/si4463.o
+ .debug_macro   0x0000000000000000       0xe1 Output/atsaml10_si4463_TX Debug/Obj/si4463.o
  .debug_macro   0x0000000000000000      0x14e Output/atsaml10_si4463_TX Debug/Obj/si4463.o
  .group         0x0000000000000000        0xc Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
  .group         0x0000000000000000        0xc Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
@@ -3929,7 +3931,7 @@ FLASH            0x0000000000000000 0x0000000000010000 xr
 
 Linker script and memory map
 
-                0x0000000000001824                __vfprintf = __vfprintf_int_nwp
+                0x000000000000184c                __vfprintf = __vfprintf_int_nwp
                 0x0000000000000000                __vfscanf = __vfscanf_int
                 0x0000000000400000                __FLASH2_segment_start__ = 0x400000
                 0x0000000000400800                __FLASH2_segment_end__ = 0x400800
@@ -4088,7 +4090,7 @@ Linker script and memory map
                 0x0000000000000001                . = ASSERT (((__init_rodata_start__ == __init_rodata_end__) || ((__init_rodata_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .init_rodata is too large to fit in FLASH memory segment)
                 0x0000000000000300                __text_load_start__ = ALIGN (__init_rodata_end__, 0x4)
 
-.text           0x0000000000000300     0x1870
+.text           0x0000000000000300     0x1898
                 0x0000000000000300                __text_start__ = .
  *(.text .text.* .glue_7t .glue_7 .gnu.linkonce.t.* .gcc_except_table .ARM.extab* .gnu.linkonce.armextab.*)
  .glue_7        0x0000000000000300        0x0 linker stubs
@@ -4195,43 +4197,43 @@ Linker script and memory map
                 0x00000000000014f8                fillRectangle
  .text.bg       0x000000000000152e       0x38 Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
                 0x000000000000152e                bg
- .text.putChar  0x0000000000001566       0xd0 Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
+ .text.putChar  0x0000000000001566       0xf8 Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
                 0x0000000000001566                putChar
  .text.putString
-                0x0000000000001636       0x5a Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
-                0x0000000000001636                putString
- .text.clr      0x0000000000001690       0x38 Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
-                0x0000000000001690                clr
+                0x000000000000165e       0x5a Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
+                0x000000000000165e                putString
+ .text.clr      0x00000000000016b8       0x38 Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
+                0x00000000000016b8                clr
  .text.putInteger
-                0x00000000000016c8       0x38 Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
-                0x00000000000016c8                putInteger
+                0x00000000000016f0       0x38 Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
+                0x00000000000016f0                putInteger
  .text.__NVIC_EnableIRQ
-                0x0000000000001700       0x44 Output/atsaml10_si4463_TX Debug/Obj/eic_manager.o
+                0x0000000000001728       0x44 Output/atsaml10_si4463_TX Debug/Obj/eic_manager.o
  .text.EIC_Manager_init
-                0x0000000000001744       0x5c Output/atsaml10_si4463_TX Debug/Obj/eic_manager.o
-                0x0000000000001744                EIC_Manager_init
+                0x000000000000176c       0x5c Output/atsaml10_si4463_TX Debug/Obj/eic_manager.o
+                0x000000000000176c                EIC_Manager_init
  .text.EIC3_Start
-                0x00000000000017a0        0xc Output/atsaml10_si4463_TX Debug/Obj/eic_manager.o
-                0x00000000000017a0                EIC3_Start
+                0x00000000000017c8        0xc Output/atsaml10_si4463_TX Debug/Obj/eic_manager.o
+                0x00000000000017c8                EIC3_Start
  .text.libc.__putc
-                0x00000000000017ac       0x38 /usr/share/segger_embedded_studio_for_arm_4.20a/lib/libc_v8mbl_t_le_eabi.a(libc2.o)
-                0x00000000000017ac                __putc
+                0x00000000000017d4       0x38 /usr/share/segger_embedded_studio_for_arm_4.20a/lib/libc_v8mbl_t_le_eabi.a(libc2.o)
+                0x00000000000017d4                __putc
  .text.libc.sprintf
-                0x00000000000017e4       0x28 /usr/share/segger_embedded_studio_for_arm_4.20a/lib/libc_v8mbl_t_le_eabi.a(libc2.o)
-                0x00000000000017e4                sprintf
+                0x000000000000180c       0x28 /usr/share/segger_embedded_studio_for_arm_4.20a/lib/libc_v8mbl_t_le_eabi.a(libc2.o)
+                0x000000000000180c                sprintf
  .text.libc.memcpy
-                0x000000000000180c       0x16 /usr/share/segger_embedded_studio_for_arm_4.20a/lib/libc_v8mbl_t_le_eabi.a(libc2_asm.o)
-                0x000000000000180c                memcpy
-                0x000000000000180c                __aeabi_memcpy
-                0x000000000000180c                __aeabi_memcpy4
-                0x000000000000180c                __aeabi_memcpy8
- *fill*         0x0000000000001822        0x2 
+                0x0000000000001834       0x16 /usr/share/segger_embedded_studio_for_arm_4.20a/lib/libc_v8mbl_t_le_eabi.a(libc2_asm.o)
+                0x0000000000001834                memcpy
+                0x0000000000001834                __aeabi_memcpy
+                0x0000000000001834                __aeabi_memcpy4
+                0x0000000000001834                __aeabi_memcpy8
+ *fill*         0x000000000000184a        0x2 
  .text.libc.__vfprintf_int_nwp
-                0x0000000000001824      0x34c /usr/share/segger_embedded_studio_for_arm_4.20a/lib/libvfprintf_v8mbl_t_le_eabi.o
-                0x0000000000001824                __vfprintf_int_nwp
-                0x0000000000001b70                __text_end__ = (__text_start__ + SIZEOF (.text))
-                0x0000000000001870                __text_size__ = SIZEOF (.text)
-                0x0000000000001b70                __text_load_end__ = __text_end__
+                0x000000000000184c      0x34c /usr/share/segger_embedded_studio_for_arm_4.20a/lib/libvfprintf_v8mbl_t_le_eabi.o
+                0x000000000000184c                __vfprintf_int_nwp
+                0x0000000000001b98                __text_end__ = (__text_start__ + SIZEOF (.text))
+                0x0000000000001898                __text_size__ = SIZEOF (.text)
+                0x0000000000001b98                __text_load_end__ = __text_end__
 
 .vfp11_veneer   0x0000000100000000        0x0
  .vfp11_veneer  0x0000000100000000        0x0 linker stubs
@@ -4242,75 +4244,75 @@ Linker script and memory map
 .iplt           0x0000000100000000        0x0
  .iplt          0x0000000100000000        0x0 Output/atsaml10_si4463_TX Debug/Obj/system_saml10.o
                 0x0000000000000001                . = ASSERT (((__text_start__ == __text_end__) || ((__text_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .text is too large to fit in FLASH memory segment)
-                0x0000000000001b70                __dtors_load_start__ = ALIGN (__text_end__, 0x4)
+                0x0000000000001b98                __dtors_load_start__ = ALIGN (__text_end__, 0x4)
 
-.dtors          0x0000000000001b70        0x0
-                0x0000000000001b70                __dtors_start__ = .
+.dtors          0x0000000000001b98        0x0
+                0x0000000000001b98                __dtors_start__ = .
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
  *(.fini_array)
  *(SORT_BY_NAME(.fini_array.*))
-                0x0000000000001b70                __dtors_end__ = (__dtors_start__ + SIZEOF (.dtors))
+                0x0000000000001b98                __dtors_end__ = (__dtors_start__ + SIZEOF (.dtors))
                 0x0000000000000000                __dtors_size__ = SIZEOF (.dtors)
-                0x0000000000001b70                __dtors_load_end__ = __dtors_end__
+                0x0000000000001b98                __dtors_load_end__ = __dtors_end__
                 0x0000000000000001                . = ASSERT (((__dtors_start__ == __dtors_end__) || ((__dtors_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .dtors is too large to fit in FLASH memory segment)
-                0x0000000000001b70                __ctors_load_start__ = ALIGN (__dtors_end__, 0x4)
+                0x0000000000001b98                __ctors_load_start__ = ALIGN (__dtors_end__, 0x4)
 
-.ctors          0x0000000000001b70        0x4
-                0x0000000000001b70                __ctors_start__ = .
+.ctors          0x0000000000001b98        0x4
+                0x0000000000001b98                __ctors_start__ = .
  *(SORT_BY_NAME(.ctors.*))
  *(.ctors)
  *(.init_array)
- .init_array    0x0000000000001b70        0x4 Output/atsaml10_si4463_TX Debug/Obj/SAML10_Startup.o
+ .init_array    0x0000000000001b98        0x4 Output/atsaml10_si4463_TX Debug/Obj/SAML10_Startup.o
  *(SORT_BY_NAME(.init_array.*))
-                0x0000000000001b74                __ctors_end__ = (__ctors_start__ + SIZEOF (.ctors))
+                0x0000000000001b9c                __ctors_end__ = (__ctors_start__ + SIZEOF (.ctors))
                 0x0000000000000004                __ctors_size__ = SIZEOF (.ctors)
-                0x0000000000001b74                __ctors_load_end__ = __ctors_end__
+                0x0000000000001b9c                __ctors_load_end__ = __ctors_end__
                 0x0000000000000001                . = ASSERT (((__ctors_start__ == __ctors_end__) || ((__ctors_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .ctors is too large to fit in FLASH memory segment)
-                0x0000000000001b74                __rodata_load_start__ = ALIGN (__ctors_end__, 0x4)
+                0x0000000000001b9c                __rodata_load_start__ = ALIGN (__ctors_end__, 0x4)
 
-.rodata         0x0000000000001b74      0x4c4
-                0x0000000000001b74                __rodata_start__ = .
+.rodata         0x0000000000001b9c      0x4c4
+                0x0000000000001b9c                __rodata_start__ = .
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x0000000000001b74        0xf Output/atsaml10_si4463_TX Debug/Obj/main.o
- *fill*         0x0000000000001b83        0x1 
- .rodata        0x0000000000001b84      0x19c Output/atsaml10_si4463_TX Debug/Obj/si4463.o
- .rodata        0x0000000000001d20        0xa Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
- *fill*         0x0000000000001d2a        0x2 
+ .rodata        0x0000000000001b9c        0xf Output/atsaml10_si4463_TX Debug/Obj/main.o
+ *fill*         0x0000000000001bab        0x1 
+ .rodata        0x0000000000001bac      0x19c Output/atsaml10_si4463_TX Debug/Obj/si4463.o
+ .rodata        0x0000000000001d48        0xa Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
+ *fill*         0x0000000000001d52        0x2 
  .rodata.libc.__RAL_hex_lc
-                0x0000000000001d2c       0x10 /usr/share/segger_embedded_studio_for_arm_4.20a/lib/libc_v8mbl_t_le_eabi.a(libc2.o)
-                0x0000000000001d2c                __RAL_hex_lc
+                0x0000000000001d54       0x10 /usr/share/segger_embedded_studio_for_arm_4.20a/lib/libc_v8mbl_t_le_eabi.a(libc2.o)
+                0x0000000000001d54                __RAL_hex_lc
  .rodata.libc.__RAL_hex_uc
-                0x0000000000001d3c       0x10 /usr/share/segger_embedded_studio_for_arm_4.20a/lib/libc_v8mbl_t_le_eabi.a(libc2.o)
-                0x0000000000001d3c                __RAL_hex_uc
+                0x0000000000001d64       0x10 /usr/share/segger_embedded_studio_for_arm_4.20a/lib/libc_v8mbl_t_le_eabi.a(libc2.o)
+                0x0000000000001d64                __RAL_hex_uc
  .rodata.libc.__vfprintf_int_nwp
-                0x0000000000001d4c      0x2ec /usr/share/segger_embedded_studio_for_arm_4.20a/lib/libvfprintf_v8mbl_t_le_eabi.o
-                0x0000000000002038                __rodata_end__ = (__rodata_start__ + SIZEOF (.rodata))
+                0x0000000000001d74      0x2ec /usr/share/segger_embedded_studio_for_arm_4.20a/lib/libvfprintf_v8mbl_t_le_eabi.o
+                0x0000000000002060                __rodata_end__ = (__rodata_start__ + SIZEOF (.rodata))
                 0x00000000000004c4                __rodata_size__ = SIZEOF (.rodata)
-                0x0000000000002038                __rodata_load_end__ = __rodata_end__
+                0x0000000000002060                __rodata_load_end__ = __rodata_end__
 
 .rel.dyn        0x0000000000400000        0x0
  .rel.iplt      0x0000000000400000        0x0 Output/atsaml10_si4463_TX Debug/Obj/system_saml10.o
                 0x0000000000000001                . = ASSERT (((__rodata_start__ == __rodata_end__) || ((__rodata_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .rodata is too large to fit in FLASH memory segment)
-                0x0000000000002038                __ARM.exidx_load_start__ = ALIGN (__rodata_end__, 0x4)
+                0x0000000000002060                __ARM.exidx_load_start__ = ALIGN (__rodata_end__, 0x4)
 
-.ARM.exidx      0x0000000000002038        0x0
-                0x0000000000002038                __ARM.exidx_start__ = .
-                0x0000000000002038                __exidx_start = __ARM.exidx_start__
+.ARM.exidx      0x0000000000002060        0x0
+                0x0000000000002060                __ARM.exidx_start__ = .
+                0x0000000000002060                __exidx_start = __ARM.exidx_start__
  *(.ARM.exidx .ARM.exidx.*)
-                0x0000000000002038                __ARM.exidx_end__ = (__ARM.exidx_start__ + SIZEOF (.ARM.exidx))
+                0x0000000000002060                __ARM.exidx_end__ = (__ARM.exidx_start__ + SIZEOF (.ARM.exidx))
                 0x0000000000000000                __ARM.exidx_size__ = SIZEOF (.ARM.exidx)
-                0x0000000000002038                __exidx_end = __ARM.exidx_end__
-                0x0000000000002038                __ARM.exidx_load_end__ = __ARM.exidx_end__
+                0x0000000000002060                __exidx_end = __ARM.exidx_end__
+                0x0000000000002060                __ARM.exidx_load_end__ = __ARM.exidx_end__
                 0x0000000000000001                . = ASSERT (((__ARM.exidx_start__ == __ARM.exidx_end__) || ((__ARM.exidx_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .ARM.exidx is too large to fit in FLASH memory segment)
-                0x0000000000002038                __fast_load_start__ = ALIGN (__ARM.exidx_end__, 0x4)
+                0x0000000000002060                __fast_load_start__ = ALIGN (__ARM.exidx_end__, 0x4)
 
-.fast           0x0000000020000000        0x0 load address 0x0000000000002038
+.fast           0x0000000020000000        0x0 load address 0x0000000000002060
                 0x0000000020000000                __fast_start__ = .
  *(.fast .fast.*)
                 0x0000000020000000                __fast_end__ = (__fast_start__ + SIZEOF (.fast))
                 0x0000000000000000                __fast_size__ = SIZEOF (.fast)
-                0x0000000000002038                __fast_load_end__ = (__fast_load_start__ + SIZEOF (.fast))
+                0x0000000000002060                __fast_load_end__ = (__fast_load_start__ + SIZEOF (.fast))
                 0x0000000000000001                . = ASSERT (((__fast_load_start__ == __fast_load_end__) || ((__fast_load_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .fast is too large to fit in FLASH memory segment)
 
 .fast_run       0x0000000020000000        0x0
@@ -4320,9 +4322,9 @@ Linker script and memory map
                 0x0000000000000000                __fast_run_size__ = SIZEOF (.fast_run)
                 0x0000000020000000                __fast_run_load_end__ = __fast_run_end__
                 0x0000000000000001                . = ASSERT (((__fast_run_start__ == __fast_run_end__) || ((__fast_run_end__ - __RAM_segment_start__) <= __RAM_segment_size__)), error: .fast_run is too large to fit in RAM memory segment)
-                0x0000000000002038                __data_load_start__ = ALIGN ((__fast_load_start__ + SIZEOF (.fast)), 0x4)
+                0x0000000000002060                __data_load_start__ = ALIGN ((__fast_load_start__ + SIZEOF (.fast)), 0x4)
 
-.data           0x0000000020000000      0x314 load address 0x0000000000002038
+.data           0x0000000020000000      0x314 load address 0x0000000000002060
                 0x0000000020000000                __data_start__ = .
  *(.data .data.* .gnu.linkonce.d.*)
  .data.SystemCoreClock
@@ -4339,13 +4341,13 @@ Linker script and memory map
                 0x000000002000000c                simpleFont
                 0x0000000020000314                __data_end__ = (__data_start__ + SIZEOF (.data))
                 0x0000000000000314                __data_size__ = SIZEOF (.data)
-                0x000000000000234c                __data_load_end__ = (__data_load_start__ + SIZEOF (.data))
+                0x0000000000002374                __data_load_end__ = (__data_load_start__ + SIZEOF (.data))
 
 .igot.plt       0x0000000100000000        0x0
  .igot.plt      0x0000000100000000        0x0 Output/atsaml10_si4463_TX Debug/Obj/system_saml10.o
                 0x0000000000000001                . = ASSERT (((__data_load_start__ == __data_load_end__) || ((__data_load_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .data is too large to fit in FLASH memory segment)
 
-.data_run       0x0000000020000000      0x314 load address 0x0000000000002038
+.data_run       0x0000000020000000      0x314 load address 0x0000000000002060
                 0x0000000020000000                __data_run_start__ = .
                 0x0000000020000314                . = MAX ((__data_run_start__ + SIZEOF (.data)), .)
  *fill*         0x0000000020000000      0x314 
@@ -4405,16 +4407,16 @@ Linker script and memory map
                 0x0000000000000000                __tbss_size__ = SIZEOF (.tbss)
                 0x000000002000037c                __tbss_load_end__ = __tbss_end__
                 0x0000000000000001                . = ASSERT (((__tbss_start__ == __tbss_end__) || ((__tbss_end__ - __RAM_segment_start__) <= __RAM_segment_size__)), error: .tbss is too large to fit in RAM memory segment)
-                0x000000000000234c                __tdata_load_start__ = ALIGN ((__data_load_start__ + SIZEOF (.data)), 0x4)
+                0x0000000000002374                __tdata_load_start__ = ALIGN ((__data_load_start__ + SIZEOF (.data)), 0x4)
 
-.tdata          0x000000002000037c        0x0 load address 0x000000000000234c
+.tdata          0x000000002000037c        0x0 load address 0x0000000000002374
                 0x000000002000037c                __tdata_start__ = .
  *(.tdata .tdata.*)
                 0x000000002000037c                __tdata_end__ = (__tdata_start__ + SIZEOF (.tdata))
                 0x0000000000000000                __tdata_size__ = SIZEOF (.tdata)
-                0x000000000000234c                __tdata_load_end__ = (__tdata_load_start__ + SIZEOF (.tdata))
-                0x000000000000234c                __FLASH_segment_used_end__ = (ALIGN ((__data_load_start__ + SIZEOF (.data)), 0x4) + SIZEOF (.tdata))
-                0x000000000000234c                __FLASH_segment_used_size__ = (__FLASH_segment_used_end__ - __FLASH_segment_start__)
+                0x0000000000002374                __tdata_load_end__ = (__tdata_load_start__ + SIZEOF (.tdata))
+                0x0000000000002374                __FLASH_segment_used_end__ = (ALIGN ((__data_load_start__ + SIZEOF (.data)), 0x4) + SIZEOF (.tdata))
+                0x0000000000002374                __FLASH_segment_used_size__ = (__FLASH_segment_used_end__ - __FLASH_segment_start__)
                 0x0000000000000001                . = ASSERT (((__tdata_load_start__ == __tdata_load_end__) || ((__tdata_load_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .tdata is too large to fit in FLASH memory segment)
 
 .tdata_run      0x000000002000037c        0x0
@@ -4494,7 +4496,7 @@ LOAD /usr/share/segger_embedded_studio_for_arm_4.20a/lib/libvfscanf_v8mbl_t_le_e
 END GROUP
 OUTPUT(Output/Debug/Exe/atsaml10_si4463_TX.elf elf32-littlearm)
 
-.debug_frame    0x0000000000000000      0x9d8
+.debug_frame    0x0000000000000000      0x9f8
  .debug_frame   0x0000000000000000       0x30 Output/atsaml10_si4463_TX Debug/Obj/system_saml10.o
  .debug_frame   0x0000000000000030       0xc8 Output/atsaml10_si4463_TX Debug/Obj/main.o
  .debug_frame   0x00000000000000f8       0x30 Output/atsaml10_si4463_TX Debug/Obj/clock.o
@@ -4502,11 +4504,11 @@ OUTPUT(Output/Debug/Exe/atsaml10_si4463_TX.elf elf32-littlearm)
  .debug_frame   0x0000000000000150       0x20 Output/atsaml10_si4463_TX Debug/Obj/pin_manager.o
  .debug_frame   0x0000000000000170       0x60 Output/atsaml10_si4463_TX Debug/Obj/spi.o
  .debug_frame   0x00000000000001d0       0x2c Output/atsaml10_si4463_TX Debug/Obj/system.o
- .debug_frame   0x00000000000001fc      0x2c0 Output/atsaml10_si4463_TX Debug/Obj/si4463.o
- .debug_frame   0x00000000000004bc      0x494 Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
- .debug_frame   0x0000000000000950       0x88 Output/atsaml10_si4463_TX Debug/Obj/eic_manager.o
+ .debug_frame   0x00000000000001fc      0x2e0 Output/atsaml10_si4463_TX Debug/Obj/si4463.o
+ .debug_frame   0x00000000000004dc      0x494 Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
+ .debug_frame   0x0000000000000970       0x88 Output/atsaml10_si4463_TX Debug/Obj/eic_manager.o
 
-.debug_info     0x0000000000000000     0x7ede
+.debug_info     0x0000000000000000     0x7f5f
  .debug_info    0x0000000000000000       0xac Output/atsaml10_si4463_TX Debug/Obj/system_saml10.o
  .debug_info    0x00000000000000ac     0x134a Output/atsaml10_si4463_TX Debug/Obj/main.o
  .debug_info    0x00000000000013f6      0x3e7 Output/atsaml10_si4463_TX Debug/Obj/clock.o
@@ -4514,14 +4516,14 @@ OUTPUT(Output/Debug/Exe/atsaml10_si4463_TX.elf elf32-littlearm)
  .debug_info    0x0000000000001877      0x9cb Output/atsaml10_si4463_TX Debug/Obj/pin_manager.o
  .debug_info    0x0000000000002242     0x1f89 Output/atsaml10_si4463_TX Debug/Obj/spi.o
  .debug_info    0x00000000000041cb       0x8c Output/atsaml10_si4463_TX Debug/Obj/system.o
- .debug_info    0x0000000000004257      0xbe1 Output/atsaml10_si4463_TX Debug/Obj/si4463.o
- .debug_info    0x0000000000004e38     0x1efb Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
- .debug_info    0x0000000000006d33     0x113d Output/atsaml10_si4463_TX Debug/Obj/eic_manager.o
- .debug_info    0x0000000000007e70       0x22 Output/atsaml10_si4463_TX Debug/Obj/thumb_crt0.o
- .debug_info    0x0000000000007e92       0x26 Output/atsaml10_si4463_TX Debug/Obj/SAML10_Startup.o
- .debug_info    0x0000000000007eb8       0x26 Output/atsaml10_si4463_TX Debug/Obj/ATSAML10E16A_Vectors.o
+ .debug_info    0x0000000000004257      0xc62 Output/atsaml10_si4463_TX Debug/Obj/si4463.o
+ .debug_info    0x0000000000004eb9     0x1efb Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
+ .debug_info    0x0000000000006db4     0x113d Output/atsaml10_si4463_TX Debug/Obj/eic_manager.o
+ .debug_info    0x0000000000007ef1       0x22 Output/atsaml10_si4463_TX Debug/Obj/thumb_crt0.o
+ .debug_info    0x0000000000007f13       0x26 Output/atsaml10_si4463_TX Debug/Obj/SAML10_Startup.o
+ .debug_info    0x0000000000007f39       0x26 Output/atsaml10_si4463_TX Debug/Obj/ATSAML10E16A_Vectors.o
 
-.debug_abbrev   0x0000000000000000     0x10b0
+.debug_abbrev   0x0000000000000000     0x10d5
  .debug_abbrev  0x0000000000000000       0x7b Output/atsaml10_si4463_TX Debug/Obj/system_saml10.o
  .debug_abbrev  0x000000000000007b      0x306 Output/atsaml10_si4463_TX Debug/Obj/main.o
  .debug_abbrev  0x0000000000000381       0xf8 Output/atsaml10_si4463_TX Debug/Obj/clock.o
@@ -4529,15 +4531,15 @@ OUTPUT(Output/Debug/Exe/atsaml10_si4463_TX.elf elf32-littlearm)
  .debug_abbrev  0x00000000000004f6      0x15c Output/atsaml10_si4463_TX Debug/Obj/pin_manager.o
  .debug_abbrev  0x0000000000000652      0x1a5 Output/atsaml10_si4463_TX Debug/Obj/spi.o
  .debug_abbrev  0x00000000000007f7       0x6c Output/atsaml10_si4463_TX Debug/Obj/system.o
- .debug_abbrev  0x0000000000000863      0x26a Output/atsaml10_si4463_TX Debug/Obj/si4463.o
- .debug_abbrev  0x0000000000000acd      0x30a Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
- .debug_abbrev  0x0000000000000dd7      0x29f Output/atsaml10_si4463_TX Debug/Obj/eic_manager.o
- .debug_abbrev  0x0000000000001076       0x12 Output/atsaml10_si4463_TX Debug/Obj/thumb_crt0.o
- .debug_abbrev  0x0000000000001088       0x14 Output/atsaml10_si4463_TX Debug/Obj/SAML10_Startup.o
- .debug_abbrev  0x000000000000109c       0x14 Output/atsaml10_si4463_TX Debug/Obj/ATSAML10E16A_Vectors.o
+ .debug_abbrev  0x0000000000000863      0x28f Output/atsaml10_si4463_TX Debug/Obj/si4463.o
+ .debug_abbrev  0x0000000000000af2      0x30a Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
+ .debug_abbrev  0x0000000000000dfc      0x29f Output/atsaml10_si4463_TX Debug/Obj/eic_manager.o
+ .debug_abbrev  0x000000000000109b       0x12 Output/atsaml10_si4463_TX Debug/Obj/thumb_crt0.o
+ .debug_abbrev  0x00000000000010ad       0x14 Output/atsaml10_si4463_TX Debug/Obj/SAML10_Startup.o
+ .debug_abbrev  0x00000000000010c1       0x14 Output/atsaml10_si4463_TX Debug/Obj/ATSAML10E16A_Vectors.o
 
 .debug_pubnames
-                0x0000000000000000      0xdbd
+                0x0000000000000000      0xdd5
  .debug_pubnames
                 0x0000000000000000       0x4f Output/atsaml10_si4463_TX Debug/Obj/system_saml10.o
  .debug_pubnames
@@ -4553,14 +4555,14 @@ OUTPUT(Output/Debug/Exe/atsaml10_si4463_TX.elf elf32-littlearm)
  .debug_pubnames
                 0x0000000000000577       0x23 Output/atsaml10_si4463_TX Debug/Obj/system.o
  .debug_pubnames
-                0x000000000000059a      0x21a Output/atsaml10_si4463_TX Debug/Obj/si4463.o
+                0x000000000000059a      0x232 Output/atsaml10_si4463_TX Debug/Obj/si4463.o
  .debug_pubnames
-                0x00000000000007b4      0x243 Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
+                0x00000000000007cc      0x243 Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
  .debug_pubnames
-                0x00000000000009f7      0x3c6 Output/atsaml10_si4463_TX Debug/Obj/eic_manager.o
+                0x0000000000000a0f      0x3c6 Output/atsaml10_si4463_TX Debug/Obj/eic_manager.o
 
 .debug_pubtypes
-                0x0000000000000000     0x1731
+                0x0000000000000000     0x173b
  .debug_pubtypes
                 0x0000000000000000       0xac Output/atsaml10_si4463_TX Debug/Obj/system_saml10.o
  .debug_pubtypes
@@ -4576,13 +4578,13 @@ OUTPUT(Output/Debug/Exe/atsaml10_si4463_TX.elf elf32-littlearm)
  .debug_pubtypes
                 0x0000000000000e13       0xac Output/atsaml10_si4463_TX Debug/Obj/system.o
  .debug_pubtypes
-                0x0000000000000ebf      0x1c7 Output/atsaml10_si4463_TX Debug/Obj/si4463.o
+                0x0000000000000ebf      0x1d1 Output/atsaml10_si4463_TX Debug/Obj/si4463.o
  .debug_pubtypes
-                0x0000000000001086      0x37c Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
+                0x0000000000001090      0x37c Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
  .debug_pubtypes
-                0x0000000000001402      0x32f Output/atsaml10_si4463_TX Debug/Obj/eic_manager.o
+                0x000000000000140c      0x32f Output/atsaml10_si4463_TX Debug/Obj/eic_manager.o
 
-.debug_aranges  0x0000000000000000      0x420
+.debug_aranges  0x0000000000000000      0x428
  .debug_aranges
                 0x0000000000000000       0x28 Output/atsaml10_si4463_TX Debug/Obj/system_saml10.o
  .debug_aranges
@@ -4598,19 +4600,19 @@ OUTPUT(Output/Debug/Exe/atsaml10_si4463_TX.elf elf32-littlearm)
  .debug_aranges
                 0x0000000000000118       0x20 Output/atsaml10_si4463_TX Debug/Obj/system.o
  .debug_aranges
-                0x0000000000000138       0xc0 Output/atsaml10_si4463_TX Debug/Obj/si4463.o
+                0x0000000000000138       0xc8 Output/atsaml10_si4463_TX Debug/Obj/si4463.o
  .debug_aranges
-                0x00000000000001f8      0x128 Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
+                0x0000000000000200      0x128 Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
  .debug_aranges
-                0x0000000000000320       0x40 Output/atsaml10_si4463_TX Debug/Obj/eic_manager.o
+                0x0000000000000328       0x40 Output/atsaml10_si4463_TX Debug/Obj/eic_manager.o
  .debug_aranges
-                0x0000000000000360       0x80 Output/atsaml10_si4463_TX Debug/Obj/thumb_crt0.o
+                0x0000000000000368       0x80 Output/atsaml10_si4463_TX Debug/Obj/thumb_crt0.o
  .debug_aranges
-                0x00000000000003e0       0x20 Output/atsaml10_si4463_TX Debug/Obj/SAML10_Startup.o
+                0x00000000000003e8       0x20 Output/atsaml10_si4463_TX Debug/Obj/SAML10_Startup.o
  .debug_aranges
-                0x0000000000000400       0x20 Output/atsaml10_si4463_TX Debug/Obj/ATSAML10E16A_Vectors.o
+                0x0000000000000408       0x20 Output/atsaml10_si4463_TX Debug/Obj/ATSAML10E16A_Vectors.o
 
-.debug_ranges   0x0000000000000000      0x338
+.debug_ranges   0x0000000000000000      0x340
  .debug_ranges  0x0000000000000000       0x18 Output/atsaml10_si4463_TX Debug/Obj/system_saml10.o
  .debug_ranges  0x0000000000000018       0x40 Output/atsaml10_si4463_TX Debug/Obj/main.o
  .debug_ranges  0x0000000000000058       0x18 Output/atsaml10_si4463_TX Debug/Obj/clock.o
@@ -4618,12 +4620,12 @@ OUTPUT(Output/Debug/Exe/atsaml10_si4463_TX.elf elf32-littlearm)
  .debug_ranges  0x0000000000000080       0x10 Output/atsaml10_si4463_TX Debug/Obj/pin_manager.o
  .debug_ranges  0x0000000000000090       0x28 Output/atsaml10_si4463_TX Debug/Obj/spi.o
  .debug_ranges  0x00000000000000b8       0x10 Output/atsaml10_si4463_TX Debug/Obj/system.o
- .debug_ranges  0x00000000000000c8       0xb0 Output/atsaml10_si4463_TX Debug/Obj/si4463.o
- .debug_ranges  0x0000000000000178      0x118 Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
- .debug_ranges  0x0000000000000290       0x30 Output/atsaml10_si4463_TX Debug/Obj/eic_manager.o
- .debug_ranges  0x00000000000002c0       0x78 Output/atsaml10_si4463_TX Debug/Obj/thumb_crt0.o
+ .debug_ranges  0x00000000000000c8       0xb8 Output/atsaml10_si4463_TX Debug/Obj/si4463.o
+ .debug_ranges  0x0000000000000180      0x118 Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
+ .debug_ranges  0x0000000000000298       0x30 Output/atsaml10_si4463_TX Debug/Obj/eic_manager.o
+ .debug_ranges  0x00000000000002c8       0x78 Output/atsaml10_si4463_TX Debug/Obj/thumb_crt0.o
 
-.debug_macro    0x0000000000000000    0x120c2
+.debug_macro    0x0000000000000000    0x120c8
  .debug_macro   0x0000000000000000      0x2d7 Output/atsaml10_si4463_TX Debug/Obj/system_saml10.o
  .debug_macro   0x00000000000002d7      0xab4 Output/atsaml10_si4463_TX Debug/Obj/system_saml10.o
  .debug_macro   0x0000000000000d8b      0x1a3 Output/atsaml10_si4463_TX Debug/Obj/system_saml10.o
@@ -4699,21 +4701,21 @@ OUTPUT(Output/Debug/Exe/atsaml10_si4463_TX.elf elf32-littlearm)
  .debug_macro   0x000000000000fec6       0x28 Output/atsaml10_si4463_TX Debug/Obj/main.o
  .debug_macro   0x000000000000feee       0x40 Output/atsaml10_si4463_TX Debug/Obj/main.o
  .debug_macro   0x000000000000ff2e      0x14e Output/atsaml10_si4463_TX Debug/Obj/main.o
- .debug_macro   0x000000000001007c       0xdb Output/atsaml10_si4463_TX Debug/Obj/main.o
- .debug_macro   0x0000000000010157      0x692 Output/atsaml10_si4463_TX Debug/Obj/main.o
- .debug_macro   0x00000000000107e9      0x2cb Output/atsaml10_si4463_TX Debug/Obj/clock.o
- .debug_macro   0x0000000000010ab4      0x2da Output/atsaml10_si4463_TX Debug/Obj/delay.o
- .debug_macro   0x0000000000010d8e      0x2d5 Output/atsaml10_si4463_TX Debug/Obj/pin_manager.o
- .debug_macro   0x0000000000011063      0x2d5 Output/atsaml10_si4463_TX Debug/Obj/spi.o
- .debug_macro   0x0000000000011338      0x2e5 Output/atsaml10_si4463_TX Debug/Obj/system.o
- .debug_macro   0x000000000001161d      0x31e Output/atsaml10_si4463_TX Debug/Obj/si4463.o
- .debug_macro   0x000000000001193b      0x31e Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
- .debug_macro   0x0000000000011c59       0x10 Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
- .debug_macro   0x0000000000011c69       0x72 Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
- .debug_macro   0x0000000000011cdb       0xf5 Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
- .debug_macro   0x0000000000011dd0      0x2f2 Output/atsaml10_si4463_TX Debug/Obj/eic_manager.o
+ .debug_macro   0x000000000001007c       0xe1 Output/atsaml10_si4463_TX Debug/Obj/main.o
+ .debug_macro   0x000000000001015d      0x692 Output/atsaml10_si4463_TX Debug/Obj/main.o
+ .debug_macro   0x00000000000107ef      0x2cb Output/atsaml10_si4463_TX Debug/Obj/clock.o
+ .debug_macro   0x0000000000010aba      0x2da Output/atsaml10_si4463_TX Debug/Obj/delay.o
+ .debug_macro   0x0000000000010d94      0x2d5 Output/atsaml10_si4463_TX Debug/Obj/pin_manager.o
+ .debug_macro   0x0000000000011069      0x2d5 Output/atsaml10_si4463_TX Debug/Obj/spi.o
+ .debug_macro   0x000000000001133e      0x2e5 Output/atsaml10_si4463_TX Debug/Obj/system.o
+ .debug_macro   0x0000000000011623      0x31e Output/atsaml10_si4463_TX Debug/Obj/si4463.o
+ .debug_macro   0x0000000000011941      0x31e Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
+ .debug_macro   0x0000000000011c5f       0x10 Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
+ .debug_macro   0x0000000000011c6f       0x72 Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
+ .debug_macro   0x0000000000011ce1       0xf5 Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
+ .debug_macro   0x0000000000011dd6      0x2f2 Output/atsaml10_si4463_TX Debug/Obj/eic_manager.o
 
-.debug_line     0x0000000000000000     0x4d01
+.debug_line     0x0000000000000000     0x4d28
  .debug_line    0x0000000000000000      0x589 Output/atsaml10_si4463_TX Debug/Obj/system_saml10.o
  .debug_line    0x0000000000000589      0x794 Output/atsaml10_si4463_TX Debug/Obj/main.o
  .debug_line    0x0000000000000d1d      0x589 Output/atsaml10_si4463_TX Debug/Obj/clock.o
@@ -4721,14 +4723,14 @@ OUTPUT(Output/Debug/Exe/atsaml10_si4463_TX.elf elf32-littlearm)
  .debug_line    0x00000000000017fc      0x5cf Output/atsaml10_si4463_TX Debug/Obj/pin_manager.o
  .debug_line    0x0000000000001dcb      0x6fc Output/atsaml10_si4463_TX Debug/Obj/spi.o
  .debug_line    0x00000000000024c7      0x591 Output/atsaml10_si4463_TX Debug/Obj/system.o
- .debug_line    0x0000000000002a58      0x96a Output/atsaml10_si4463_TX Debug/Obj/si4463.o
- .debug_line    0x00000000000033c2      0xfe5 Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
- .debug_line    0x00000000000043a7      0x62d Output/atsaml10_si4463_TX Debug/Obj/eic_manager.o
- .debug_line    0x00000000000049d4      0x1e0 Output/atsaml10_si4463_TX Debug/Obj/thumb_crt0.o
- .debug_line    0x0000000000004bb4       0x93 Output/atsaml10_si4463_TX Debug/Obj/SAML10_Startup.o
- .debug_line    0x0000000000004c47       0xba Output/atsaml10_si4463_TX Debug/Obj/ATSAML10E16A_Vectors.o
+ .debug_line    0x0000000000002a58      0x985 Output/atsaml10_si4463_TX Debug/Obj/si4463.o
+ .debug_line    0x00000000000033dd      0xff1 Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
+ .debug_line    0x00000000000043ce      0x62d Output/atsaml10_si4463_TX Debug/Obj/eic_manager.o
+ .debug_line    0x00000000000049fb      0x1e0 Output/atsaml10_si4463_TX Debug/Obj/thumb_crt0.o
+ .debug_line    0x0000000000004bdb       0x93 Output/atsaml10_si4463_TX Debug/Obj/SAML10_Startup.o
+ .debug_line    0x0000000000004c6e       0xba Output/atsaml10_si4463_TX Debug/Obj/ATSAML10E16A_Vectors.o
 
-.debug_str      0x0000000000000000    0x6c78b
+.debug_str      0x0000000000000000    0x6c7da
  .debug_str     0x0000000000000000    0x666c0 Output/atsaml10_si4463_TX Debug/Obj/system_saml10.o
                                       0x6698e (size before relaxing)
  .debug_str     0x00000000000666c0     0x48e0 Output/atsaml10_si4463_TX Debug/Obj/main.o
@@ -4743,16 +4745,16 @@ OUTPUT(Output/Debug/Exe/atsaml10_si4463_TX.elf elf32-littlearm)
                                       0x67097 (size before relaxing)
  .debug_str     0x000000000006ba98       0x4b Output/atsaml10_si4463_TX Debug/Obj/system.o
                                       0x6691c (size before relaxing)
- .debug_str     0x000000000006bae3      0x27f Output/atsaml10_si4463_TX Debug/Obj/si4463.o
-                                      0x68d8b (size before relaxing)
- .debug_str     0x000000000006bd62      0x886 Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
+ .debug_str     0x000000000006bae3      0x2ce Output/atsaml10_si4463_TX Debug/Obj/si4463.o
+                                      0x68de0 (size before relaxing)
+ .debug_str     0x000000000006bdb1      0x886 Output/atsaml10_si4463_TX Debug/Obj/ili9341.o
                                       0x69e85 (size before relaxing)
- .debug_str     0x000000000006c5e8       0x7c Output/atsaml10_si4463_TX Debug/Obj/eic_manager.o
+ .debug_str     0x000000000006c637       0x7c Output/atsaml10_si4463_TX Debug/Obj/eic_manager.o
                                       0x67779 (size before relaxing)
- .debug_str     0x000000000006c664       0x7f Output/atsaml10_si4463_TX Debug/Obj/thumb_crt0.o
- .debug_str     0x000000000006c6e3       0x51 Output/atsaml10_si4463_TX Debug/Obj/SAML10_Startup.o
+ .debug_str     0x000000000006c6b3       0x7f Output/atsaml10_si4463_TX Debug/Obj/thumb_crt0.o
+ .debug_str     0x000000000006c732       0x51 Output/atsaml10_si4463_TX Debug/Obj/SAML10_Startup.o
                                          0x91 (size before relaxing)
- .debug_str     0x000000000006c734       0x57 Output/atsaml10_si4463_TX Debug/Obj/ATSAML10E16A_Vectors.o
+ .debug_str     0x000000000006c783       0x57 Output/atsaml10_si4463_TX Debug/Obj/ATSAML10E16A_Vectors.o
                                          0x97 (size before relaxing)
 
 .comment        0x0000000000000000       0x43

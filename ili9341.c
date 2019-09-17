@@ -375,7 +375,9 @@ void putChar(unsigned char ascii, unsigned int x0, unsigned int y0, unsigned int
 		for(f=0;f<8;f++)
 		{
 			if((temp>>f)&0x01)
-				fillRectangle(x0+i*size, y0+f*size, size, size, fgcolor);
+				{fillRectangle(x0+i*size, y0+f*size, size, size, fgcolor);}
+                                else
+                                fillRectangle(x0+i*size, y0+f*size, size, size, BLACK);
 		}
 	}
 }
